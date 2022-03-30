@@ -8,33 +8,33 @@ class DreamCard {
 class ToDo {
   String action;
   String frequency;
-  ToDo(this.action, this.frequency) {}
+  int forHowLong;
+  ToDo(this.action, this.frequency, this.forHowLong) {}
 }
 
 final dreamCard = [
   DreamCard("assets/images/img0.jpg", "Workout", [
-    ToDo("30 pushups", "everyday morning"),
-    ToDo("30 pushups", "everyday night"),
+    ToDo("30 pushups", "everyday morning",4),
+    ToDo("30 pushups", "everyday night",5),
   ]),
   DreamCard("assets/images/img1.jpg", "Collaborative Work", [
-    ToDo("Update Work Progress", "everyday day"),
-    ToDo("Spend Time Discussing", "twice a week"),
+    ToDo("Update Work Progress", "everyday day",5),
+    ToDo("Spend Time Discussing", "twice a week",5),
   ]),
   DreamCard("assets/images/img2.jpg", "Friends", [
-    ToDo("Trip", "everyday month"),
-    ToDo("Group Game", "everyday week"),
+    ToDo("Trip", "everyday month",5),
+    ToDo("Group Game", "everyday week",5),
   ]),
   DreamCard("assets/images/img3.jpg", "Relationship", [
-    ToDo("Trip", "everyday month"),
-    ToDo("Dinner", "everyday night"),
+    ToDo("Trip", "everyday month",5),
+    ToDo("Dinner", "everyday night",5),
   ]),
   DreamCard("assets/images/img4.jpg", "Work Habit", [
-    ToDo("Spend time learning", "everyday"),
-    ToDo("Review work progress", "everyday night"),
+    ToDo("Spend time learning", "everyday",5),
+    ToDo("Review work progress", "everyday night",5),
   ]),
   DreamCard("assets/images/img5.jpg", "Successful Work Rig", [
-    ToDo("spend time working", "8 hours a day"),
-    ToDo("Plan the next work", "everyday morning"),
+    ToDo("spend time working", "8 hours a day",5),
+    ToDo("Plan the next work", "everyday morning",5),
   ]),
-  
 ];

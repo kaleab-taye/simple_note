@@ -45,7 +45,8 @@ class HomeApp extends StatelessWidget {
                 Container(
                   child: Text("${cardItem.heading}",
                       style: TextStyle(
-                        height: 3,
+                        height: 2,
+                        fontSize: 20,
                       )),
                 ),
               ]),
@@ -57,22 +58,39 @@ class HomeApp extends StatelessWidget {
   }
 }
 
-class dreamCardDetailsScreen extends StatelessWidget {
+class dreamCardDetailsScreen extends StatefulWidget {
   var cardItem;
   dreamCardDetailsScreen(this.cardItem);
 
   @override
+  State<dreamCardDetailsScreen> createState() => _dreamCardDetailsScreenState();
+}
+
+class _dreamCardDetailsScreenState extends State<dreamCardDetailsScreen> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: appBarDef(cardItem.heading),
+        appBar: appBarDef(widget.cardItem.heading),
         body: ListView.builder(
-            itemCount: cardItem.toDos.length,
+            itemCount: widget.cardItem.toDos.length,
             itemBuilder: (BuildContext context, int index2) {
               return Card(
                 child: Column(children: [
-                  Text("${cardItem.toDos[index2].action}"),
-                  Text("${cardItem.toDos[index2].frequency}")
+                  Text("${widget.cardItem.toDos[index2].action}"),
+                  Text("${widget.cardItem.toDos[index2].frequency}"),
+                  Text(
+                      "for how long${widget.cardItem.toDos[index2].forHowLong}"),
+                  Slider(
+                      min: 1,
+                      max: 20,
+                      divisions: 19,
+                      value: widget.cardItem.toDos[index2].forHowLong,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          widget.cardItem.toDos[index2].forHowLong = newValue;
+                        });
+                      })
                 ]),
               );
             }),
