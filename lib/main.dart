@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dataSource.dart';
 
 String appName = "Simple Note";
+_primaryColor(){ return Colors.grey[850];}
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomeApp()));
 }
@@ -10,9 +11,6 @@ void main() {
 
 class HomeApp extends StatelessWidget {
   HomeApp({Key? key}) : super(key: key);
-
-  final List<String> entries = <String>['A', 'B', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +118,7 @@ appBarDef(heading) {
   return AppBar(
     title: Text("$heading"),
     centerTitle: true,
-    backgroundColor: Colors.grey[850]!.withOpacity(1.0),
+    backgroundColor: _primaryColor(),
     elevation: 0.0,
   );
 }
